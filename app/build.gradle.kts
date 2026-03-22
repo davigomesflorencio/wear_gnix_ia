@@ -44,15 +44,15 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.compose.material3)
+    implementation(libs.material.icons.extended)
+
     implementation(libs.compose.foundation)
     implementation(libs.compose.ui.tooling)
     implementation(libs.wear.tooling.preview)
     implementation(libs.activity.compose)
     implementation(libs.core.splashscreen)
 
-    implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.wear.compose.navigation)
     implementation(libs.kotlinx.serialization.core)
 
     androidTestImplementation(platform(libs.compose.bom))

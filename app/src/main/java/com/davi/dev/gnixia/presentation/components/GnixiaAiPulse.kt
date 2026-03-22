@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.wear.tooling.preview.devices.WearDevices
 import com.davi.dev.gnixia.presentation.theme.GnixiaTheme
 import com.davi.dev.gnixia.presentation.theme.Primary
 import com.davi.dev.gnixia.presentation.theme.Secondary
@@ -66,7 +67,7 @@ fun GnixiaAiPulse(
             .scale(scale)
             .clip(CircleShape)
             .background(gradient),
-    ){}
+    ) {}
 }
 
 /**
@@ -113,7 +114,8 @@ fun GnixiaMicButton(
 
 // ─── Preview ──────────────────────────────────────────────────────────────────
 
-@Preview(widthDp = 200, heightDp = 200, backgroundColor = 0xFF131313, showBackground = true)
+@Preview(device = WearDevices.SMALL_ROUND,
+    widthDp = 200, heightDp = 200, backgroundColor = 0xFF131313, showBackground = true)
 @Composable
 private fun AiPulsePreview() {
     GnixiaTheme {
