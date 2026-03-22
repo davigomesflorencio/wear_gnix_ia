@@ -43,7 +43,7 @@ fun GnixiaPrimaryButton(
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
-            .height(48.dp)
+            .height(28.dp)
             .clip(GnixiaShapes.Full)
             .background(if (enabled) gradient else Brush.verticalGradient(listOf(Color(0xFF2A2A2A), Color(0xFF222222))))
             .clickable(enabled = enabled, onClick = onClick)
@@ -72,7 +72,7 @@ fun GnixiaGhostButton(
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
-            .height(48.dp)
+            .height(24.dp)
             .clip(GnixiaShapes.Full)
             .clickable(enabled = enabled, onClick = onClick)
             .padding(horizontal = GnixiaSpacing.ButtonPadding),

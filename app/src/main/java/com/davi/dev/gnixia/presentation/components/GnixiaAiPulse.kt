@@ -114,8 +114,10 @@ fun GnixiaMicButton(
 
 // ─── Preview ──────────────────────────────────────────────────────────────────
 
-@Preview(device = WearDevices.SMALL_ROUND,
-    widthDp = 200, heightDp = 200, backgroundColor = 0xFF131313, showBackground = true)
+@Preview(
+    device = WearDevices.SMALL_ROUND,
+    widthDp = 200, heightDp = 200, backgroundColor = 0xFF131313, showBackground = true
+)
 @Composable
 private fun AiPulsePreview() {
     GnixiaTheme {

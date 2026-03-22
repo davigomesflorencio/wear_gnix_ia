@@ -1,6 +1,7 @@
 package com.davi.dev.gnixia.presentation.screens
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,30 +15,25 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FlashOn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.wear.compose.material.Button
-import androidx.wear.compose.material.ButtonDefaults
-import androidx.wear.compose.material.Icon
-import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.Vignette
 import androidx.wear.compose.material.VignettePosition
-import androidx.wear.tooling.preview.devices.WearDevice
+import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.tooling.preview.devices.WearDevices
+import com.davi.dev.gnixia.R
+import com.davi.dev.gnixia.presentation.components.GnixiaPrimaryButton
 import com.davi.dev.gnixia.presentation.theme.GnixiaTheme
 
 @Composable
@@ -55,75 +51,44 @@ fun LoginScreen(
             verticalArrangement = Arrangement.SpaceAround
         ) {
             Spacer(modifier = Modifier.height(16.dp))
-
-            Text(
-                text = "QUANTUM LINK",
-                style = MaterialTheme.typography.caption1,
-                color = Color(0xFF6A99FF)
-            )
             Text(
                 text = "Gnix AI",
-                style = MaterialTheme.typography.title1,
+                style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
-                color = Color.White
+                color = Color(0xFF6A99FF)
             )
 
             // Lightning Bolt Icon
             Box(
                 modifier = Modifier
-                    .size(80.dp)
+                    .size(40.dp)
                     .clip(CircleShape)
                     .background(Color(0xFF6A99FF)),
                 contentAlignment = Alignment.Center
             ) {
-                Icon(
-                    imageVector = Icons.Default.FlashOn,
-                    contentDescription = "Lightning Bolt",
-                    tint = Color.White,
-                    modifier = Modifier.size(48.dp)
+                Image(
+                    painterResource(R.drawable.icon),
+                    contentDescription = ""
                 )
             }
 
             Text(
                 text = "Your cognitive edge, powered by Gemini, right on your wrist.",
-                style = MaterialTheme.typography.body2,
+                style = MaterialTheme.typography.labelSmall,
                 textAlign = TextAlign.Center,
                 color = Color.White,
-                modifier = Modifier.padding(horizontal = 8.dp)
+                modifier = Modifier.padding(horizontal = 4.dp)
             )
 
-            Button(
-                onClick = onLoginClick,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(48.dp)
-                    .clip(RoundedCornerShape(24.dp)),
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Color(0xFF6A99FF),
-                    contentColor = Color.White
-                )
-            ) {
-                // Placeholder for Google icon
-                Box(
-                    modifier = Modifier
-                        .size(24.dp)
-                        .background(Color.White.copy(alpha = 0.2f), CircleShape),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = "G", // Placeholder for Google 'G'
-                        color = Color(0xFF6A99FF),
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.button
-                    )
-                }
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(text = "Login with Google")
-            }
+            GnixiaPrimaryButton(
+                text = "Login Google",
+                onClick = {},
+                modifier = Modifier.fillMaxWidth(.8f),
+            )
 
             Text(
                 text = "V2.4.0 HIGH-VOLTAGE",
-                style = MaterialTheme.typography.caption2,
+                style = MaterialTheme.typography.labelSmall,
                 color = Color(0xFF888888)
             )
 
