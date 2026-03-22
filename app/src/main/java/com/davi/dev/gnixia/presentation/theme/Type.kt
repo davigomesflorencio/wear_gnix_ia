@@ -1,15 +1,32 @@
 package com.davi.dev.gnixia.presentation.theme
 
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.em
-import androidx.compose.ui.unit.sp
-import androidx.wear.compose.material3.Typography
+import androidx.compose.ui.text.googlefonts.Font
+import androidx.compose.ui.text.googlefonts.GoogleFont
+import com.davi.dev.gnixia.R
 
-// Font: Inter (add res/font/inter_*.ttf and replace FontFamily.SansSerif below)
-// e.g.: val Inter = FontFamily(Font(R.font.inter_regular), Font(R.font.inter_bold, FontWeight.Bold))
-private val Inter = FontFamily.SansSerif
+val provider = GoogleFont.Provider(
+    providerAuthority = "com.google.android.gms.fonts",
+    providerPackage = "com.google.android.gms",
+    certificates = R.array.com_google_android_gms_fonts_certs
+)
+
+val bodyFontFamily = FontFamily(
+    Font(
+        googleFont = GoogleFont("Nunito"),
+        fontProvider = provider,
+    )
+)
+
+val displayFontFamily = FontFamily(
+    Font(
+        googleFont = GoogleFont("Nunito"),
+        fontProvider = provider,
+    )
+)
+
+// Default Material 3 typography values
+val baseline = androidx.wear.compose.material3.Typography()
 
 /**
  * Gnixia type scale – editorial clarity on a 40 mm circular display.
@@ -20,84 +37,17 @@ private val Inter = FontFamily.SansSerif
  *   Body-MD     : 0.8750 rem → 14 sp  – AI responses; line-height 1.4 × (20 sp)
  *   Label-SM    : 0.6875 rem → 11 sp  – timestamps, micro-metadata; ALL CAPS + 0.05 em tracking
  */
-val GnixiaTypography = Typography(
-    displayLarge = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Bold,
-        fontSize = 48.sp,
-        letterSpacing = (-0.02).em,
-    ),
-    displayMedium = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Bold,
-        fontSize = 40.sp,
-        letterSpacing = (-0.02).em,
-    ),
-    // Display-SM – AI confirmations, large numerics
-    displaySmall = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Bold,
-        fontSize = 36.sp,
-        letterSpacing = (-0.01).em,
-    ),
-    // Title-LG – chat titles, settings categories
-    titleLarge = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 22.sp,
-        letterSpacing = (-0.005).em,
-    ),
-    titleMedium = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 18.sp,
-        letterSpacing = 0.em,
-    ),
-    titleSmall = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
-        letterSpacing = 0.em,
-    ),
-    // Body-MD – AI responses (line-height 1.4 × = 20 sp)
-    bodyLarge = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 22.4.sp,
-        letterSpacing = 0.em,
-    ),
-    bodyMedium = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 19.6.sp, // 14 × 1.4
-        letterSpacing = 0.em,
-    ),
-    bodySmall = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp,
-        lineHeight = 16.8.sp,
-        letterSpacing = 0.em,
-    ),
-    labelLarge = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Medium,
-        fontSize = 13.sp,
-        letterSpacing = 0.05.em,
-    ),
-    labelMedium = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Medium,
-        fontSize = 12.sp,
-        letterSpacing = 0.05.em,
-    ),
-    // Label-SM – timestamps, meta; use with .uppercase() in composables
-    labelSmall = TextStyle(
-        fontFamily = Inter,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        letterSpacing = 0.05.em,
-    ),
+val GnixiaTypography = androidx.wear.compose.material3.Typography(
+    displayLarge = baseline.displayLarge.copy(fontFamily = displayFontFamily),
+    displayMedium = baseline.displayMedium.copy(fontFamily = displayFontFamily),
+    displaySmall = baseline.displaySmall.copy(fontFamily = displayFontFamily),
+    titleLarge = baseline.titleLarge.copy(fontFamily = displayFontFamily),
+    titleMedium = baseline.titleMedium.copy(fontFamily = displayFontFamily),
+    titleSmall = baseline.titleSmall.copy(fontFamily = displayFontFamily),
+    bodyLarge = baseline.bodyLarge.copy(fontFamily = bodyFontFamily),
+    bodyMedium = baseline.bodyMedium.copy(fontFamily = bodyFontFamily),
+    bodySmall = baseline.bodySmall.copy(fontFamily = bodyFontFamily),
+    labelLarge = baseline.labelLarge.copy(fontFamily = bodyFontFamily),
+    labelMedium = baseline.labelMedium.copy(fontFamily = bodyFontFamily),
+    labelSmall = baseline.labelSmall.copy(fontFamily = bodyFontFamily),
 )

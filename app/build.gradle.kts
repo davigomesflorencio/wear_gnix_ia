@@ -54,6 +54,7 @@ dependencies {
 
     implementation(libs.wear.compose.navigation)
     implementation(libs.kotlinx.serialization.core)
+    implementation(libs.ui.text.google.fonts)
 
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
