@@ -51,7 +51,7 @@ fun GnixiaPrimaryButton(
     ) {
         Text(
             text = text,
-            style = MaterialTheme.typography.labelLarge,
+            style = MaterialTheme.typography.labelMedium,
             color = if (enabled) OnPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center,
         )

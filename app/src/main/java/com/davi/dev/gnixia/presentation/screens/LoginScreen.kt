@@ -53,7 +53,7 @@ fun LoginScreen(
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = "Gnix AI",
-                style = MaterialTheme.typography.titleSmall,
+                style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF6A99FF)
             )
