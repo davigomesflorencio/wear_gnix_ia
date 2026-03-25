@@ -1,3 +1,7 @@
+<div>
+<img src="screenshots/photo.jpeg" alt="drawing" style="width:auto;"/>
+</div>
+
 # ⚡ Gnixia — AI on Your Wrist
 
 > **Your cognitive edge, powered by Gemini, right on your wrist.**
